@@ -4,7 +4,7 @@ import random
 from string import ascii_uppercase
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "postgres://rfoqivratuibcy:efae8fc525935eb7034456d8c42f3f16f729e44a8d464d85b3c752d2e26c1459@ec2-52-5-167-89.compute-1.amazonaws.com:5432/dd49c1gufd614k"
+app.config["SECRET_KEY"] = "postgres://zqifvsuxjzgrww:1e373471f9ddfeb2971b551983208756e405ed21c2b1f1efc4985f41d203b962@ec2-44-206-204-65.compute-1.amazonaws.com:5432/dagh3i3kfuk8uk"
 socketio = SocketIO(app)
 
 rooms = {}  # storing info of the different rooms that we have

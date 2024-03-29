@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, session, redirect, url_for
 from flask_socketio import join_room, leave_room, send, SocketIO
-import random
 from string import ascii_uppercase
+import secrets
 
 app = Flask(__name__)
 app.config["HEROKU_CONFIG_VARS"] = "postgres://zqifvsuxjzgrww:1e373471f9ddfeb2971b551983208756e405ed21c2b1f1efc4985f41d203b962@ec2-44-206-204-65.compute-1.amazonaws.com:5432/dagh3i3kfuk8uk"
@@ -13,7 +13,7 @@ def generate_unique_code(length):
     while True:
         code = ""
         for _ in range(length):
-            code += random.choice(ascii_uppercase)
+            code += secrets.SystemRandom().choice(ascii_uppercase)
         
         if code in rooms:
             generate_unique_code(4)
